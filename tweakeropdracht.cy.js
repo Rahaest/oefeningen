@@ -1,7 +1,7 @@
 describe('Opdracht Cypress', () => {
     it('Visits Tweakers', () => {
         cy.visit('https://tweakers.net/')
-        cy.getCookie('session_id')
+        cy.contains('Alles accepteren').click()
 
         //Get the last article of 09/08/2022
         cy.contains('Dinsdag 9 augustus').click()
