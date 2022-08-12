@@ -19,6 +19,5 @@ message = ""
 for word in matrix:
     for char in word:
         message += char
-# ?<= is a lookbehind , ?= a lookahead, meaning that before and after should be an alphanumeric character (\w).
 # \W+ will match any character that's not alphanumeric and replaces them with space.
-print(re.sub(r"(?<=\w)(\W+)(?=\w)", ' ', message))
+print(re.sub(r"(\W+)", ' ', message))
