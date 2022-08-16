@@ -1,15 +1,20 @@
-let fib1 = 0, fib2 = 1 , nextNr;
+let fib1 = 0, fib2 = 1 , nextNr=0;
 let fibArray = [];
 let fibString = "";
 
-for(let i = 1; i <= 10000; i++) {
+const inputNumber = parseInt(prompt('Enter a number: '));
+
+while(fib1<= inputNumber+1){
+    let i = 1;
     fibArray[i] = fib1;
     nextNr = fib1 + fib2;
     fib1 = fib2;
     fib2 = nextNr; 
+    console.log(fibArray[i]); 
+    i++;
 }
+fib2 = fib1;  
 
-const inputNumber = parseInt(prompt('Enter a number: '));
 if (fibArray.includes(inputNumber) === true){
     fib1 = inputNumber;
 }
@@ -21,13 +26,14 @@ else {
     fib1 = closestNr;
 };
 
-let fibIndex = fibArray.indexOf(fib1) + 1;
-for (let i = 1; i <= 5; i++) {
+for( let i = 1; i <= 5;i++) {
     if (i === 5) {
-        fibString = fibString.concat(fibArray[fibIndex]);
+        fibString = fibString.concat(fib2);
     } else{ 
-    fibString = fibString.concat(fibArray[fibIndex] + ",  ");
-    fibIndex++;
-    }
+    fibString = fibString.concat(fib2 + ",  ");    
+    nextNr = fib1 + fib2;
+    fib1 = fib2;
+    fib2 = nextNr; 
 }
+    }
 console.log(fibString);
