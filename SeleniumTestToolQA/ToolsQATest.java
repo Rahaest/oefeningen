@@ -16,16 +16,18 @@ public class ToolsQATest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://demoqa.com/");
 
         ToolsQAHomePage homePage = new ToolsQAHomePage(driver);
-        homePage.openForms();
+        homePage.goTo();
+        ToolsQAFormsPage formsPage = homePage.openForms();
+        ToolsQAPracticeFormPage practiceForm = formsPage.openPracticeForm();
 
-        ToolsQAFormsPage formsPage = new ToolsQAFormsPage(driver);
-        formsPage.openPracticeForm();
-
-        ToolsQAPracticeFormPage pracForm = new ToolsQAPracticeFormPage(driver);
-        pracForm.submitForm();
+        practiceForm.setFirstName("Test");
+        practiceForm.setLastName("Person");
+        practiceForm.setGender("Male");
+        practiceForm.setPhoneNr("9876543210");
+        practiceForm.fillInForm();
+        practiceForm.submit();
 
         driver.quit();
 

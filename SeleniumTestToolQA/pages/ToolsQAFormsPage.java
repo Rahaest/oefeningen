@@ -6,12 +6,14 @@ import org.openqa.selenium.WebDriver;
 public class ToolsQAFormsPage {
 
     WebDriver driver;
-    By practiceForm = By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[2]/div/ul/li");
+    By practiceFormLink = By.xpath("//span[text()='Practice Form']");
 
     public ToolsQAFormsPage(WebDriver driver){
         this.driver=driver;
     }
 
-    public void openPracticeForm() {
-        driver.findElement(practiceForm).click();}
+    public ToolsQAPracticeFormPage openPracticeForm() {
+        driver.findElement(practiceFormLink).click();
+        return new ToolsQAPracticeFormPage(driver);
+    }
 }
