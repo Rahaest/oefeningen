@@ -10,6 +10,12 @@ describe("Testing ToolsQA to navigate", () => {
         homePageCy.navigate();
         homePageCy.openForms();
         formsPageCy.openPracticeForms();
+        practiceFormCy.setFirstName("Test");
+        practiceFormCy.setLastName("Persoon");
+        practiceFormCy.setUserNumber("9876543210");
+        practiceFormCy.setOther();
+        practiceFormCy.fillIn();
+        practiceFormCy.setMale();
         practiceFormCy.submit();
     })
 })
