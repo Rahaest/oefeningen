@@ -4,11 +4,12 @@ describe('Opdracht Cypress', () => {
         cy.contains('Alles accepteren').click()
 
         //Get the last article of 09/08/2022
-        cy.contains('Dinsdag 9 augustus').click()
-        cy.url().should('include', '20220809')
+        cy.contains('Zondag 28 augustus').click()
+    
+        cy.url().should('include', '20220828')
 
         //Check if the Author & Time is correct
-        cy.contains('Door Sabine Schults')
-        cy.contains('9 augustus 2022 20:33')
+        cy.contains('Door Jay Stout')
+        cy.contains('28 augustus 2022')
     })
 })
